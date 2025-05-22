@@ -324,8 +324,8 @@ class MainActivity : ComponentActivity() {
                 }
             }
 
-            val enableDynamicTheme by rememberPreference(DynamicThemeKey, defaultValue = true)
-            val darkTheme by rememberEnumPreference(DarkModeKey, defaultValue = DarkMode.AUTO)
+            val enableDynamicTheme by rememberPreference(DynamicThemeKey, defaultValue = false)
+            val darkTheme by rememberEnumPreference(DarkModeKey, defaultValue = DarkMode.OFF)
 
             val pureBlack by rememberPreference(PureBlackKey, defaultValue = false)
             val isSystemInDarkTheme = isSystemInDarkTheme()
@@ -752,7 +752,7 @@ class MainActivity : ComponentActivity() {
                                                         text = "Flowtune",
                                                         style = MaterialTheme.typography.displayLarge,
                                                         fontWeight = FontWeight.Bold,
-                                                        fontSize = 36.sp
+                                                        fontSize = 27.sp
                                                     )
                                                 }
                                             },

@@ -590,11 +590,11 @@ fun SettingsScreen(
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(vertical = 24.dp),
+                .padding(vertical = 1.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             if (isLoggedIn) {
-                // Avatar circular para usuario
+                // Avatar circular para usuario1
          //     Box() {}
                 Spacer(modifier = Modifier.height(8.dp))
 
