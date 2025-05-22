@@ -587,66 +587,10 @@ fun SettingsScreen(
             "SAPISID" in parseCookieString(innerTubeCookie)
         }
 
-        Column(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(vertical = 24.dp),
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            if (isLoggedIn) {
-                // Avatar circular para usuario
-                Box(
-                    modifier = Modifier
-                        .size(112.dp)
-                        .clip(CircleShape)
-                        .background(MaterialTheme.colorScheme.primary),
-                    contentAlignment = Alignment.Center
-                ) {
-                    if (customAvatarUri != null) {
-                        Image(
-                            painter = rememberAsyncImagePainter(
-                                ImageRequest.Builder(context)
-                                    .data(data = customAvatarUri!!.toUri())
-                                    .crossfade(true)
-                                    .build()
-                            ),
-                            contentDescription = "Avatar",
-                            modifier = Modifier
-                                .size(104.dp)
-                                .clip(CircleShape),
-                            contentScale = ContentScale.Crop
-                        )
-                    } else {
-                        // Avatar con inicial del nombre si no hay imagen
-                        Text(
-                            text = accountName.first().toString().uppercase(),
-                            modifier = Modifier.align(Alignment.Center),
-                            color = MaterialTheme.colorScheme.onPrimary,
-                            style = MaterialTheme.typography.titleLarge
-                        )
-                    }
-                }
+          
                 Spacer(modifier = Modifier.height(8.dp))
 
-                Text(
-                    text = accountName.replace("@", ""),
-                    style = MaterialTheme.typography.titleMedium,
-                    fontWeight = FontWeight.Bold
-                )
-            } else {
-                // Logo para usuario no autenticado
-                Icon(
-                    painter = painterResource(R.drawable.flowtune_monochrome),
-                    contentDescription = null,
-                    modifier = Modifier.size(56.dp),
-                    tint = MaterialTheme.colorScheme.primary
-                )
-                Spacer(modifier = Modifier.height(8.dp))
-                Text(
-                    text = "flowtune",
-                    style = MaterialTheme.typography.headlineSmall,
-                    fontWeight = FontWeight.SemiBold
-                )
+                
             }
         }
 
