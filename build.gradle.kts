@@ -14,7 +14,7 @@ plugins {
     }
     dependencies {
         classpath(libs.gradle)
-        classpath(libs.kotlin.gradle.plugin) // 
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:2.1.0")  
     }
 }
 
