@@ -19,17 +19,13 @@ include(":app")
 include(":innertube")
 include(":material-color-utilities")
 
-include(":kugou")
-project(":kugou").projectDir = file("providers/kugou")
+include(":kugou"); project(":kugou").projectDir = file("providers/kugou")
 
-include(":lrclib")
-project(":kugou").projectDir = file("providers/lrclib")
+include(":lrclib"); project(":kugou").projectDir = file("providers/lrclib")
 
-include(":kizzy")
-project(":kugou").projectDir = file("providers/kizzy")
+include(":kizzy"); project(":kugou").projectDir = file("providers/kizzy")
 
-include(":jossredconnect")
-project(":kugou").projectDir = file("providers/jossredconnect")
+include(":jossredconnect"); project(":kugou").projectDir = file("providers/jossredconnect")
 
 
 
