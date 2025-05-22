@@ -21,11 +21,11 @@ include(":material-color-utilities")
 
 include(":kugou"); project(":kugou").projectDir = file("providers/kugou")
 
-include(":lrclib"); project(":kugou").projectDir = file("providers/lrclib")
+include(":lrclib"); project(":lrclib").projectDir = file("providers/lrclib")
 
-include(":kizzy"); project(":kugou").projectDir = file("providers/kizzy")
+include(":kizzy"); project(":kizzy").projectDir = file("providers/kizzy")
 
-include(":jossredconnect"); project(":kugou").projectDir = file("providers/jossredconnect")
+include(":jossredconnect"); project(":jossredconnect").projectDir = file("providers/jossredconnect")
 
 
 
