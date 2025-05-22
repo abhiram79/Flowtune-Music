@@ -353,8 +353,8 @@ fun HomeScreen(
                 ) {
                     ChipsRow(
                         chips = listOfNotNull(
-                            Pair("history", stringResource(R.string.history)),
-                            Pair("stats", stringResource(R.string.stats)),
+                            Pair("login", stringResource(R.string.history)),
+                            Pair("history", stringResource(R.string.stats)),
                             Pair("liked", stringResource(R.string.liked)),
                             Pair("downloads", stringResource(R.string.offline)),
                             if (isLoggedIn) Pair(
@@ -365,8 +365,8 @@ fun HomeScreen(
                         currentValue = "",
                         onValueUpdate = { value ->
                             when (value) {
+                                "login" -> navController.navigate("history")
                                 "history" -> navController.navigate("history")
-                                "stats" -> navController.navigate("stats")
                                 "liked" -> navController.navigate("auto_playlist/liked")
                                 "downloads" -> navController.navigate("auto_playlist/downloaded")
                                 "account" -> if (isLoggedIn) navController.navigate("account")

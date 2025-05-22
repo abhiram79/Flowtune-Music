@@ -749,7 +749,7 @@ class MainActivity : ComponentActivity() {
                                                     )
                                                     Spacer(modifier = Modifier.width(12.dp))
                                                     Text(
-                                                        text = "Flowtune",
+                                                        text = "FlowTune",
                                                         style = MaterialTheme.typography.displayLarge,
                                                         fontWeight = FontWeight.Bold,
                                                         fontSize = 27.sp

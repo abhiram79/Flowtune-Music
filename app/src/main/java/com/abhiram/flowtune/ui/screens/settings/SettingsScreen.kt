@@ -652,32 +652,32 @@ fun SettingsScreen(
 //            icon = { Icon(painterResource(R.drawable.apps), null) },
 //            onClick = { navController.navigate("settings/problem_solver") }
 //        )
-        PreferenceEntry(
-            title = { Text(stringResource(R.string.Donate)) },
-            icon = { Icon(painterResource(R.drawable.donate), null) },
-            onClick = { uriHandler.openUri("https://buymeacoffee.com/arturocervantes") }
-        )
+//        PreferenceEntry(
+//          title = { Text(stringResource(R.string.Donate)) },
+//            icon = { Icon(painterResource(R.drawable.donate), null) },
+//          onClick = { uriHandler.openUri("https://buymeacoffee.com/arturocervantes") }
+//        )
 
-        PreferenceEntry(
-            title = { Text(stringResource(R.string.Telegramchanel)) },
-            icon = { Icon(painterResource(R.drawable.telegram), null) },
-            onClick = { uriHandler.openUri("https://t.me/flowtune_chat") }
-        )
-
-
-        TranslatePreference(uriHandler = uriHandler)
-
-        ChangelogButtonWithPopup()
+//        PreferenceEntry(
+//            title = { Text(stringResource(R.string.Telegramchanel)) },
+ //           icon = { Icon(painterResource(R.drawable.telegram), null) },
+//            onClick = { uriHandler.openUri("https://t.me/flowtune_chat") }
+//        )
 
 
+//        TranslatePreference(uriHandler = uriHandler)
 
-        UpdateCard()
-        Spacer(Modifier.height(25.dp))
+//        ChangelogButtonWithPopup()
 
 
-        VersionCard(uriHandler)
 
-        Spacer(Modifier.height(25.dp))
+//        UpdateCard()
+//        Spacer(Modifier.height(25.dp))
+
+
+//        VersionCard(uriHandler)
+
+//        Spacer(Modifier.height(25.dp))
 
 
     }
