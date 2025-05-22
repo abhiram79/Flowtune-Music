@@ -587,10 +587,23 @@ fun SettingsScreen(
             "SAPISID" in parseCookieString(innerTubeCookie)
         }
 
-          
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(vertical = 24.dp),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            if (isLoggedIn) {
+                // Avatar circular para usuario
+         //     Box() {}
                 Spacer(modifier = Modifier.height(8.dp))
 
-                
+       //       Text()
+            } else {
+                // Logo para usuario no autenticado
+      //        Icon()
+                Spacer(modifier = Modifier.height(8.dp))
+          //    Text()
             }
         }
 
