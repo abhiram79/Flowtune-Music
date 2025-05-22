@@ -744,13 +744,14 @@ class MainActivity : ComponentActivity() {
                                                     Image(
                                                         painter = painterResource(R.drawable.flowtune),
                                                         contentDescription = "App Logo",
-                                                        modifier = Modifier.size(22.dp)
+                                                        modifier = Modifier.size(30.dp)
                                                     )
-                                                    Spacer(modifier = Modifier.width(8.dp))
+                                                    Spacer(modifier = Modifier.width(12.dp))
                                                     Text(
-                                                        text = "flowtune",
-                                                        style = MaterialTheme.typography.titleLarge,
-                                                        fontWeight = FontWeight.Bold
+                                                        text = "Flowtune",
+                                                        style = MaterialTheme.typography.displayLarge,
+                                                        fontWeight = FontWeight.Bold,
+                                                        fontSize = 36.sp
                                                     )
                                                 }
                                             },
@@ -1338,7 +1339,7 @@ fun ProfileIconWithUpdateBadge(
     var showUpdateBadge by remember { mutableStateOf(false) }
     val updatedOnClick = rememberUpdatedState(onProfileClick)
 
-    // Control seguro de updates
+    // 
     LaunchedEffect(currentVersion) {
         try {
             val latestVersion = withContext(Dispatchers.IO) { checkForUpdates() }
@@ -1382,7 +1383,7 @@ fun ProfileIconWithUpdateBadge(
                 )
             } ?: run {
                 Icon(
-                    painter = painterResource(R.drawable.person),
+                    painter = painterResource(R.drawable.settings),
                     contentDescription = "Avatar predeterminado",
                     modifier = modifier
                 )
