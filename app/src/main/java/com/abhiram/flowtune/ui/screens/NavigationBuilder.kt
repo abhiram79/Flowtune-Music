@@ -46,7 +46,7 @@ import androidx.compose.ui.unit.IntOffset
 
 // Update your animation constants:
 private const val ANIMATION_DURATION = 300
-private const val ANIMATION_FADE = 600
+private const val ANIMATION_FADE = 500
 
 // For slide animations (uses IntOffset)
 private val SLIDE_ANIM_SPEC = tween<IntOffset>(ANIMATION_DURATION)
