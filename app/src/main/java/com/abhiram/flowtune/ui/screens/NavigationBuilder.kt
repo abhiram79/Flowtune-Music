@@ -42,19 +42,22 @@ import com.abhiram.flowtune.ui.screens.settings.SettingsScreen
 import com.abhiram.flowtune.ui.screens.settings.StorageSettings
 
 
-// Animation constants
+// Add these imports at the top:
+import androidx.compose.ui.unit.IntOffset
+import androidx.compose.animation.core.tween
+
+// Update your animation constants:
 private const val ANIMATION_DURATION = 300
-private val ANIMATION_SPEC = tween<IntOffset>(ANIMATION_DURATION) // Changed to IntOffset
 
-// Common transitions - now using IntOffset instead of Float
-private val slideInFromRight = slideInHorizontally(animationSpec = ANIMATION_SPEC) { fullWidth -> fullWidth }
-private val slideInFromLeft = slideInHorizontally(animationSpec = ANIMATION_SPEC) { fullWidth -> -fullWidth }
-private val slideOutToRight = slideOutHorizontally(animationSpec = ANIMATION_SPEC) { fullWidth -> fullWidth }
-private val slideOutToLeft = slideOutHorizontally(animationSpec = ANIMATION_SPEC) { fullWidth -> -fullWidth }
+// For slide animations (uses IntOffset)
+private val SLIDE_ANIM_SPEC = tween<IntOffset>(ANIMATION_DURATION)
+private val slideInFromRight = slideInHorizontally(animationSpec = SLIDE_ANIM_SPEC) { it }
+private val slideInFromLeft = slideInHorizontally(animationSpec = SLIDE_ANIM_SPEC) { -it }
 
-// Fade animations remain the same (they use Float)
-private val fadeIn = fadeIn(animationSpec = tween(ANIMATION_DURATION))
-private val fadeOut = fadeOut(animationSpec = tween(ANIMATION_DURATION))
+// For fade animations (uses Float)
+private val FADE_ANIM_SPEC = tween<Float>(ANIMATION_DURATION)
+private val fadeIn = fadeIn(animationSpec = FADE_ANIM_SPEC)
+private val fadeOut = fadeOut(animationSpec = FADE_ANIM_SPEC)
 
 
 @RequiresApi(Build.VERSION_CODES.TIRAMISU)
