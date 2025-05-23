@@ -41,13 +41,12 @@ import com.abhiram.flowtune.ui.screens.settings.ProblemSolverScreen
 import com.abhiram.flowtune.ui.screens.settings.SettingsScreen
 import com.abhiram.flowtune.ui.screens.settings.StorageSettings
 
-
-// Add these imports at the top:
 import androidx.compose.ui.unit.IntOffset
 
 
 // Update your animation constants:
 private const val ANIMATION_DURATION = 300
+private const val ANIMATION_FADE = 600
 
 // For slide animations (uses IntOffset)
 private val SLIDE_ANIM_SPEC = tween<IntOffset>(ANIMATION_DURATION)
@@ -55,7 +54,7 @@ private val slideInFromRight = slideInHorizontally(animationSpec = SLIDE_ANIM_SP
 private val slideInFromLeft = slideInHorizontally(animationSpec = SLIDE_ANIM_SPEC) { -it }
 
 // For fade animations (uses Float)
-private val FADE_ANIM_SPEC = tween<Float>(ANIMATION_DURATION)
+private val FADE_ANIM_SPEC = tween<Float>(ANIMATION_FADE)
 private val fadeIn = fadeIn(animationSpec = FADE_ANIM_SPEC)
 private val fadeOut = fadeOut(animationSpec = FADE_ANIM_SPEC)
 
