@@ -284,7 +284,7 @@ fun AboutScreen(
     //    Spacer(Modifier.height(8.dp))
 
     //    Card() {}
-        Spacer(Modifier.height(12.dp))
+        Spacer(Modifier.height(4.dp))
         Row(
             verticalAlignment = Alignment.Top,
         ) {
@@ -292,16 +292,9 @@ fun AboutScreen(
                 verticalAlignment = Alignment.CenterVertically,
                 modifier = Modifier.padding(top = 8.dp, bottom = 4.dp)
             ) {
-                Icon(
-                    painter = painterResource(id = R.drawable.group),
-                    contentDescription = null
-                )
-                Spacer(modifier = Modifier.width(8.dp))
-                Text(
-                    text = stringResource(R.string.contributors),
-                    style = MaterialTheme.typography.headlineSmall,
-                    fontWeight = FontWeight.Bold
-                )
+                
+        //        Spacer(modifier = Modifier.width(8.dp))
+              
             }
 
 
