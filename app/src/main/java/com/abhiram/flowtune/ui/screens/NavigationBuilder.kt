@@ -44,7 +44,7 @@ import com.abhiram.flowtune.ui.screens.settings.StorageSettings
 
 // Add these imports at the top:
 import androidx.compose.ui.unit.IntOffset
-import androidx.compose.animation.core.tween
+
 
 // Update your animation constants:
 private const val ANIMATION_DURATION = 300
@@ -58,6 +58,10 @@ private val slideInFromLeft = slideInHorizontally(animationSpec = SLIDE_ANIM_SPE
 private val FADE_ANIM_SPEC = tween<Float>(ANIMATION_DURATION)
 private val fadeIn = fadeIn(animationSpec = FADE_ANIM_SPEC)
 private val fadeOut = fadeOut(animationSpec = FADE_ANIM_SPEC)
+private val slideOutToLeft = slideOutHorizontally(
+    animationSpec = slideAnimationSpec,
+    targetOffsetX = { fullWidth -> -fullWidth }
+)
 
 
 @RequiresApi(Build.VERSION_CODES.TIRAMISU)
