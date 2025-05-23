@@ -58,10 +58,9 @@ private val slideInFromLeft = slideInHorizontally(animationSpec = SLIDE_ANIM_SPE
 private val FADE_ANIM_SPEC = tween<Float>(ANIMATION_DURATION)
 private val fadeIn = fadeIn(animationSpec = FADE_ANIM_SPEC)
 private val fadeOut = fadeOut(animationSpec = FADE_ANIM_SPEC)
-private val slideOutToLeft = slideOutHorizontally(
-    animationSpec = slideAnimationSpec,
-    targetOffsetX = { fullWidth -> -fullWidth }
-)
+
+private val slideOutToRight = fadeOut(animationSpec = FADE_ANIM_SPEC)
+private val slideOutToLeft = fadeOut(animationSpec = FADE_ANIM_SPEC)
 
 
 @RequiresApi(Build.VERSION_CODES.TIRAMISU)
