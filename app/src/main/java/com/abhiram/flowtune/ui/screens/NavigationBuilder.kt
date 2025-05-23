@@ -44,16 +44,17 @@ import com.abhiram.flowtune.ui.screens.settings.StorageSettings
 
 // Animation constants
 private const val ANIMATION_DURATION = 300
-private val ANIMATION_SPEC = tween<Float>(ANIMATION_DURATION)
+private val ANIMATION_SPEC = tween<IntOffset>(ANIMATION_DURATION) // Changed to IntOffset
 
-// Common transitions
+// Common transitions - now using IntOffset instead of Float
 private val slideInFromRight = slideInHorizontally(animationSpec = ANIMATION_SPEC) { fullWidth -> fullWidth }
 private val slideInFromLeft = slideInHorizontally(animationSpec = ANIMATION_SPEC) { fullWidth -> -fullWidth }
 private val slideOutToRight = slideOutHorizontally(animationSpec = ANIMATION_SPEC) { fullWidth -> fullWidth }
 private val slideOutToLeft = slideOutHorizontally(animationSpec = ANIMATION_SPEC) { fullWidth -> -fullWidth }
-private val fadeIn = fadeIn(animationSpec = ANIMATION_SPEC)
-private val fadeOut = fadeOut(animationSpec = ANIMATION_SPEC)
 
+// Fade animations remain the same (they use Float)
+private val fadeIn = fadeIn(animationSpec = tween(ANIMATION_DURATION))
+private val fadeOut = fadeOut(animationSpec = tween(ANIMATION_DURATION))
 
 
 @RequiresApi(Build.VERSION_CODES.TIRAMISU)
