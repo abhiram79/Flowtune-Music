@@ -93,9 +93,9 @@ hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 kotlin-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 
 
-room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+#room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+#room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+#room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
 
 # Navigation (for animations)
 navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version = "2.7.7" }
