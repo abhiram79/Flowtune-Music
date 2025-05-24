@@ -590,63 +590,20 @@ fun SettingsScreen(
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(vertical = 24.dp),
+                .padding(vertical = 1.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             if (isLoggedIn) {
-                // Avatar circular para usuario
-                Box(
-                    modifier = Modifier
-                        .size(112.dp)
-                        .clip(CircleShape)
-                        .background(MaterialTheme.colorScheme.primary),
-                    contentAlignment = Alignment.Center
-                ) {
-                    if (customAvatarUri != null) {
-                        Image(
-                            painter = rememberAsyncImagePainter(
-                                ImageRequest.Builder(context)
-                                    .data(data = customAvatarUri!!.toUri())
-                                    .crossfade(true)
-                                    .build()
-                            ),
-                            contentDescription = "Avatar",
-                            modifier = Modifier
-                                .size(104.dp)
-                                .clip(CircleShape),
-                            contentScale = ContentScale.Crop
-                        )
-                    } else {
-                        // Avatar con inicial del nombre si no hay imagen
-                        Text(
-                            text = accountName.first().toString().uppercase(),
-                            modifier = Modifier.align(Alignment.Center),
-                            color = MaterialTheme.colorScheme.onPrimary,
-                            style = MaterialTheme.typography.titleLarge
-                        )
-                    }
-                }
+                // Avatar circular para usuario1
+         //     Box() {}
                 Spacer(modifier = Modifier.height(8.dp))
 
-                Text(
-                    text = accountName.replace("@", ""),
-                    style = MaterialTheme.typography.titleMedium,
-                    fontWeight = FontWeight.Bold
-                )
+       //       Text()
             } else {
                 // Logo para usuario no autenticado
-                Icon(
-                    painter = painterResource(R.drawable.flowtune_monochrome),
-                    contentDescription = null,
-                    modifier = Modifier.size(56.dp),
-                    tint = MaterialTheme.colorScheme.primary
-                )
+      //        Icon()
                 Spacer(modifier = Modifier.height(8.dp))
-                Text(
-                    text = "flowtune",
-                    style = MaterialTheme.typography.headlineSmall,
-                    fontWeight = FontWeight.SemiBold
-                )
+          //    Text()
             }
         }
 
@@ -695,32 +652,32 @@ fun SettingsScreen(
 //            icon = { Icon(painterResource(R.drawable.apps), null) },
 //            onClick = { navController.navigate("settings/problem_solver") }
 //        )
-        PreferenceEntry(
-            title = { Text(stringResource(R.string.Donate)) },
-            icon = { Icon(painterResource(R.drawable.donate), null) },
-            onClick = { uriHandler.openUri("https://buymeacoffee.com/arturocervantes") }
-        )
+//        PreferenceEntry(
+//          title = { Text(stringResource(R.string.Donate)) },
+//            icon = { Icon(painterResource(R.drawable.donate), null) },
+//          onClick = { uriHandler.openUri("https://buymeacoffee.com/arturocervantes") }
+//        )
 
-        PreferenceEntry(
-            title = { Text(stringResource(R.string.Telegramchanel)) },
-            icon = { Icon(painterResource(R.drawable.telegram), null) },
-            onClick = { uriHandler.openUri("https://t.me/flowtune_chat") }
-        )
-
-
-        TranslatePreference(uriHandler = uriHandler)
-
-        ChangelogButtonWithPopup()
+//        PreferenceEntry(
+//            title = { Text(stringResource(R.string.Telegramchanel)) },
+ //           icon = { Icon(painterResource(R.drawable.telegram), null) },
+//            onClick = { uriHandler.openUri("https://t.me/flowtune_chat") }
+//        )
 
 
+//        TranslatePreference(uriHandler = uriHandler)
 
-        UpdateCard()
-        Spacer(Modifier.height(25.dp))
+//        ChangelogButtonWithPopup()
 
 
-        VersionCard(uriHandler)
 
-        Spacer(Modifier.height(25.dp))
+//        UpdateCard()
+//        Spacer(Modifier.height(25.dp))
+
+
+//        VersionCard(uriHandler)
+
+//        Spacer(Modifier.height(25.dp))
 
 
     }

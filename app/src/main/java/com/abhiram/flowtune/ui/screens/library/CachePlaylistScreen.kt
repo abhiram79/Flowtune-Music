@@ -146,7 +146,7 @@ fun CachePlaylistScreen(
                 item {
                     EmptyPlaceholder(
                         icon = R.drawable.music_note,
-                        text = stringResource(R.string.playlist_is_empty)
+                        text = stringResource(R.string.no_cached_songs)
                     )
                 }
             } else {

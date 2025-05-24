@@ -25,6 +25,13 @@ sealed class Screens(
         iconIdActive = R.drawable.explore_filled,
         route = "explore"
     )
+    
+    data object Offline : Screens(
+        titleId = R.string.offline_tab,
+        iconIdInactive = R.drawable.offline,
+        iconIdActive = R.drawable.offline,
+        route = "cache_playlist/cached"
+    )
 
     data object Library : Screens(
         titleId = R.string.filter_library,
@@ -34,6 +41,6 @@ sealed class Screens(
     )
 
     companion object {
-        val MainScreens = listOf(Home, Explore, Library)
+        val MainScreens = listOf(Home, Explore, Offline, Library)
     }
 }

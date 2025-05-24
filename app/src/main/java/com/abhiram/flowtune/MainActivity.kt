@@ -27,6 +27,7 @@ import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
+import androidx.compose.ui.unit.sp 
 import androidx.compose.animation.slideInHorizontally
 import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.foundation.Image
@@ -323,8 +324,8 @@ class MainActivity : ComponentActivity() {
                 }
             }
 
-            val enableDynamicTheme by rememberPreference(DynamicThemeKey, defaultValue = true)
-            val darkTheme by rememberEnumPreference(DarkModeKey, defaultValue = DarkMode.AUTO)
+            val enableDynamicTheme by rememberPreference(DynamicThemeKey, defaultValue = false)
+            val darkTheme by rememberEnumPreference(DarkModeKey, defaultValue = DarkMode.OFF)
 
             val pureBlack by rememberPreference(PureBlackKey, defaultValue = false)
             val isSystemInDarkTheme = isSystemInDarkTheme()
@@ -744,13 +745,14 @@ class MainActivity : ComponentActivity() {
                                                     Image(
                                                         painter = painterResource(R.drawable.flowtune),
                                                         contentDescription = "App Logo",
-                                                        modifier = Modifier.size(22.dp)
+                                                        modifier = Modifier.size(30.dp)
                                                     )
-                                                    Spacer(modifier = Modifier.width(8.dp))
+                                                    Spacer(modifier = Modifier.width(12.dp))
                                                     Text(
-                                                        text = "flowtune",
-                                                        style = MaterialTheme.typography.titleLarge,
-                                                        fontWeight = FontWeight.Bold
+                                                        text = "FlowTune",
+                                                        style = MaterialTheme.typography.displayLarge,
+                                                        fontWeight = FontWeight.Bold,
+                                                        fontSize = 27.sp
                                                     )
                                                 }
                                             },
@@ -1338,7 +1340,7 @@ fun ProfileIconWithUpdateBadge(
     var showUpdateBadge by remember { mutableStateOf(false) }
     val updatedOnClick = rememberUpdatedState(onProfileClick)
 
-    // Control seguro de updates
+    // 
     LaunchedEffect(currentVersion) {
         try {
             val latestVersion = withContext(Dispatchers.IO) { checkForUpdates() }
@@ -1382,7 +1384,7 @@ fun ProfileIconWithUpdateBadge(
                 )
             } ?: run {
                 Icon(
-                    painter = painterResource(R.drawable.person),
+                    painter = painterResource(R.drawable.settings),
                     contentDescription = "Avatar predeterminado",
                     modifier = modifier
                 )

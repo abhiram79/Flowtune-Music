@@ -111,6 +111,12 @@ dependencies {
     implementation(libs.media3.session)
     implementation(libs.media3.okhttp)
     implementation(libs.squigglyslider)
+    // add more deps
+    implementation(libs.room.runtime)
+    implementation(libs.room.ktx)
+    ksp(libs.room.compiler) 
+    implementation(libs.navigation.compose)
+    implementation(libs.accompanist.navigation.animation)
 
     implementation(libs.room.runtime)
     implementation(libs.kotlinx.serialization.json)

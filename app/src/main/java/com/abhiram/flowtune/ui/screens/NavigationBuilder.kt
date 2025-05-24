@@ -41,6 +41,27 @@ import com.abhiram.flowtune.ui.screens.settings.ProblemSolverScreen
 import com.abhiram.flowtune.ui.screens.settings.SettingsScreen
 import com.abhiram.flowtune.ui.screens.settings.StorageSettings
 
+import androidx.compose.ui.unit.IntOffset
+
+
+// Update your animation constants:
+private const val ANIMATION_DURATION = 300
+private const val ANIMATION_FADE = 500
+
+// For slide animations (uses IntOffset)
+private val SLIDE_ANIM_SPEC = tween<IntOffset>(ANIMATION_DURATION)
+private val slideInFromRight = slideInHorizontally(animationSpec = SLIDE_ANIM_SPEC) { it }
+private val slideInFromLeft = slideInHorizontally(animationSpec = SLIDE_ANIM_SPEC) { -it }
+
+// For fade animations (uses Float)
+private val FADE_ANIM_SPEC = tween<Float>(ANIMATION_FADE)
+private val fadeIn = fadeIn(animationSpec = FADE_ANIM_SPEC)
+private val fadeOut = fadeOut(animationSpec = FADE_ANIM_SPEC)
+
+private val slideOutToRight = fadeOut(animationSpec = FADE_ANIM_SPEC)
+private val slideOutToLeft = fadeOut(animationSpec = FADE_ANIM_SPEC)
+
+
 @RequiresApi(Build.VERSION_CODES.TIRAMISU)
 @SuppressLint("UnrememberedMutableState")
 @OptIn(ExperimentalMaterial3Api::class)
@@ -49,17 +70,41 @@ fun NavGraphBuilder.navigationBuilder(
     scrollBehavior: TopAppBarScrollBehavior,
     latestVersionName: String,
 ) {
-    composable(Screens.Home.route) {
-        HomeScreen(navController)
-    }
+    
+    
+    composable(
+    Screens.Home.route,
+    enterTransition = { fadeIn + slideInFromLeft },
+    exitTransition = { fadeOut + slideOutToLeft },
+    popEnterTransition = { fadeIn + slideInFromRight },
+    popExitTransition = { fadeOut + slideOutToRight }
+) {
+    HomeScreen(navController)
+}
+
     composable(
         Screens.Library.route,
-    ) {
-        LibraryScreen(navController)
-    }
-    composable(Screens.Explore.route) {
-        ExploreScreen(navController)
-    }
+        enterTransition = { fadeIn + slideInFromRight },
+        exitTransition = { fadeOut + slideOutToRight },
+        popEnterTransition = { fadeIn + slideInFromLeft },
+        popExitTransition = { fadeOut + slideOutToLeft }
+) {
+    LibraryScreen(navController)
+}
+
+    composable(
+        Screens.Explore.route,
+        enterTransition = { fadeIn + slideInFromRight },
+        exitTransition = { fadeOut + slideOutToRight },
+        popEnterTransition = { fadeIn + slideInFromLeft },
+        popExitTransition = { fadeOut + slideOutToLeft }
+) {
+    ExploreScreen(navController)
+}
+    
+    
+    
+    
     composable("history") {
         HistoryScreen(navController)
     }
@@ -247,29 +292,75 @@ fun NavGraphBuilder.navigationBuilder(
     }
 
 
-    composable("settings") {
-        val latestVersion by mutableLongStateOf(BuildConfig.VERSION_CODE.toLong())
-        SettingsScreen(latestVersion, navController, scrollBehavior)
-    }
-    composable("settings/appearance") {
-        AppearanceSettings(navController, scrollBehavior)
-    }
-    composable("settings/account") {
+    composable(
+    "settings",
+    enterTransition = { fadeIn + slideInFromLeft },
+    exitTransition = { fadeOut + slideOutToLeft },
+    popEnterTransition = { fadeIn + slideInFromRight },
+    popExitTransition = { fadeOut + slideOutToRight }
+) {
+    val latestVersion by mutableLongStateOf(BuildConfig.VERSION_CODE.toLong())
+    SettingsScreen(latestVersion, navController, scrollBehavior)
+}
+
+    composable(
+        "settings/appearance",
+         enterTransition = { fadeIn + slideInFromRight },
+         exitTransition = { fadeOut + slideOutToRight },
+         popEnterTransition = { fadeIn + slideInFromLeft },
+        popExitTransition = { fadeOut + slideOutToLeft }
+) {
+    AppearanceSettings(navController, scrollBehavior)
+}
+
+    composable(
+        "settings/account",
+         enterTransition = { fadeIn + slideInFromRight },
+         exitTransition = { fadeOut + slideOutToRight },
+         popEnterTransition = { fadeIn + slideInFromLeft },
+        popExitTransition = { fadeOut + slideOutToLeft }
+) {
         AccountSettings(navController, scrollBehavior)
     }
-    composable("settings/content") {
+    
+    composable("settings/content",
+         enterTransition = { fadeIn + slideInFromRight },
+         exitTransition = { fadeOut + slideOutToRight },
+         popEnterTransition = { fadeIn + slideInFromLeft },
+        popExitTransition = { fadeOut + slideOutToLeft }
+) {
         ContentSettings(navController, scrollBehavior)
     }
-    composable("settings/player") {
+    composable("settings/player",
+         enterTransition = { fadeIn + slideInFromRight },
+         exitTransition = { fadeOut + slideOutToRight },
+         popEnterTransition = { fadeIn + slideInFromLeft },
+        popExitTransition = { fadeOut + slideOutToLeft }
+) {
         PlayerSettings(navController, scrollBehavior)
     }
-    composable("settings/storage") {
+    composable("settings/storage",
+         enterTransition = { fadeIn + slideInFromRight },
+         exitTransition = { fadeOut + slideOutToRight },
+         popEnterTransition = { fadeIn + slideInFromLeft },
+        popExitTransition = { fadeOut + slideOutToLeft }
+) {
         StorageSettings(navController, scrollBehavior)
     }
-    composable("settings/privacy") {
+    composable("settings/privacy",
+         enterTransition = { fadeIn + slideInFromRight },
+         exitTransition = { fadeOut + slideOutToRight },
+         popEnterTransition = { fadeIn + slideInFromLeft },
+        popExitTransition = { fadeOut + slideOutToLeft }
+) {
         PrivacySettings(navController, scrollBehavior)
     }
-    composable("settings/backup_restore") {
+    composable("settings/backup_restore",
+         enterTransition = { fadeIn + slideInFromRight },
+         exitTransition = { fadeOut + slideOutToRight },
+         popEnterTransition = { fadeIn + slideInFromLeft },
+        popExitTransition = { fadeOut + slideOutToLeft }
+) {
         BackupAndRestore(navController, scrollBehavior)
     }
     composable("settings/discord") {
@@ -278,10 +369,20 @@ fun NavGraphBuilder.navigationBuilder(
     composable("settings/discord/login") {
         DiscordLoginScreen(navController)
     }
-    composable("settings/about") {
+    composable("settings/about",
+         enterTransition = { fadeIn + slideInFromRight },
+         exitTransition = { fadeOut + slideOutToRight },
+         popEnterTransition = { fadeIn + slideInFromLeft },
+        popExitTransition = { fadeOut + slideOutToLeft }
+) {
         AboutScreen(navController, scrollBehavior)
     }
-    composable("login") {
+    composable("login",
+         enterTransition = { fadeIn + slideInFromRight },
+         exitTransition = { fadeOut + slideOutToRight },
+         popEnterTransition = { fadeIn + slideInFromLeft },
+        popExitTransition = { fadeOut + slideOutToLeft }
+) {
         LoginScreen(navController)
     }
 }
