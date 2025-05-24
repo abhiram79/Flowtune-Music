@@ -27,9 +27,9 @@ sealed class Screens(
     )
     
     data object Offline : Screens(
-        titleId = R.string.explore,
-        iconIdInactive = R.drawable.explore_outlined,
-        iconIdActive = R.drawable.explore_filled,
+        titleId = R.string.offline_tab,
+        iconIdInactive = R.drawable.offline,
+        iconIdActive = R.drawable.offline,
         route = "cache_playlist/cached"
     )
 
